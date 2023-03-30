@@ -50,7 +50,7 @@ const Game = () => {
 			<div className='w-full flex justify-center gap-4'>
 				{answers ? answers.map(answer => {
 					console.log(answer)
-					return <button className="cursor-pointer" value={answer} onClick={(e) => {
+					return <button className="cursor-pointer border rounded-lg" value={answer} onClick={(e) => {
 						if(e.target.value === question[1]){
 							setResult(2);
 						} else{

@@ -23,10 +23,12 @@ const Company = ({ company }) => {
 					}) 
 				: <div className='col-span-3'> {game ? <Game/> : <button className='border rounded' onClick={() => setGame(true)}> Take the quiz! </button>} </div>}
 			</div>
-			<div>
+			<div className='flex flex-col px-8'>
 				{company !=="default" ? <div>{getFormattedCompanyName(company)}'s profiles on:</div> : ""}
 				{company!== "default" ? Object.keys(profiles[company]).map(subcompany => {
-						return <div><hr></hr>{getFormattedCompanyName(subcompany)}: {profiles[company][subcompany]}</div>
+						return <div>
+								<hr></hr>
+								<strong>{getFormattedCompanyName(subcompany)}</strong>: {profiles[company][subcompany]}</div>
 					}) 
 				: ""}
 			</div>
